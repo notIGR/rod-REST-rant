@@ -7,10 +7,10 @@ const index = (data) => {
       <div className="col-sm-6">
         <h2>{place.name}</h2>
         {/* class name the text appers to side of image, clas name text appear above and below image */}
-        <p clasName="text-center">{place.cuisines}</p>
+        <p className="text-center">{place.cuisines}</p>
         <img src={place.pic} alt={place.name} />
         {/* class name the text appers to side of image, clas name text appear above and below image */}
-        <p clasName="text-center">
+        <p className="text-center">
           Located in {place.city}, {place.state}
         </p>
       </div>

@@ -1,11 +1,23 @@
+body {
+     background: radial-gradient(#FDB750,#FD7F20) 
+}
 html {
-padding: 1rem;
+    min-width: 100vh;
+  padding: 1rem;
 }
 h1 {
-    text-align: center;
-    color: cornflowerblue;
+  text-align: center;
+  color: cornflowerblue;
 }
 img {
-    width: 27%;
-    margin:auto;
+  width: 27%;
+  margin: auto;
 }
+.row img {
+    width: 50%;
+}
+.placesbtn {
+    display: flex;
+    text-align: center;
+}
+
