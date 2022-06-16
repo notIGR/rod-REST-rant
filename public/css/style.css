@@ -1,13 +1,11 @@
-* {
-    text-align: center;
+html {
+padding: 1rem;
 }
 h1 {
-    color: cornflowerblue
-}
-div {
-    display: flex;
+    text-align: center;
+    color: cornflowerblue;
 }
 img {
-    width: 10%;
+    width: 27%;
     margin:auto;
 }
