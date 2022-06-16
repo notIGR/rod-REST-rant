@@ -6,8 +6,12 @@ const home = () => {
     <Def>
       <main>
         <h1>HOME</h1>
-        <p><a href="/places">
-          <button className="btn-primary">Places Page</button></a></p>
+        <div>
+          <img src="/images/bacon.jpg" alt="bacon sizzling" ></img>
+        </div>
+        <a href="/places">
+          <button className="btn-primary">Places Page</button>
+        </a>
       </main>
     </Def>
   );
