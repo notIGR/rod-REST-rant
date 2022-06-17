@@ -2,14 +2,14 @@
 const React = require("react");
 const Def = require("../default");
 
-const newPage = () => {
+const new_form = () => {
   return (
     <Def>
       <main>
-        <h1>Creat new fomrs on this page</h1>
+        <h1>Add a new Location</h1>
       </main>
     </Def>
   );
 };
 
-module.exports = newPage;
+module.exports = new_form;
