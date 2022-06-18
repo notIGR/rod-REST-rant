@@ -28,7 +28,7 @@ const home = () => {
             </div>
             <div className="col">
               {" "}
-              <img src="/images/cucumber.jpg" alt="carmel skined adult male golding cucumber in shape of a cellphone from the 90s"></img>
+              <img src="/images/cucumber.jpg" alt="carmel skined adult male holding cucumber in shape of a cellphone from the 90s"></img>
             </div>
             <div className="col">
               {" "}
