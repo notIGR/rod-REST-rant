@@ -7,7 +7,6 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
   if (!req.body.pic) {
     //default pic if none if provided
     req.body.pic = "http://placekitten.com/400/400"

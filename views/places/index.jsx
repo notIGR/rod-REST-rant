@@ -4,7 +4,7 @@ const Def = require("../default");
 const index = (data) => {
 const placesFormatted = data.places.map((place) => {
     return (
-      <div className="col-sm-6">
+      <div className="col-sm-6" key={place.name}>
         <h2>{place.name}</h2>
         {/* class name the text appers to side of image, clas name text appear above and below image */}
         <p className="text-center">{place.cuisines}</p>
