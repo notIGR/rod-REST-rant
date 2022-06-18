@@ -1,8 +1,14 @@
 body {
-     background: radial-gradient(#FDB750,#FD7F20) 
+  background: radial-gradient(#fdb750, #fd7f20);
+  text-align: center;
+}
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: aliceblue;
 }
 html {
-    min-width: 100vh;
+  min-width: 100vh;
   padding: 1rem;
 }
 h1 {
@@ -14,11 +20,11 @@ img {
   margin: auto;
 }
 .row img {
-    width: 50%;
+  width: 50%;
 }
 .placesbtn {
-    display: flex;
-    text-align: center;
+  display: flex;
+  text-align: center;
 }
 nav {
   background-color: cornflowerblue;
@@ -27,7 +33,7 @@ nav {
 
 nav ul {
   list-style-type: none;
-  margin:0;
+  margin: 0;
 }
 nav li {
   display: inline;
@@ -38,4 +44,7 @@ nav a {
   font-size: 1.5em;
 }
 
-
+nav a:hover {
+  color: pink;
+  text-decoration: none;
+}
