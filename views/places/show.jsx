@@ -40,6 +40,14 @@ const showPage = (data) => {
                 <p>No comments yet!!!</p>
               </div>
             </div>
+            <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+              Edit
+            </a>
+            <form action={`/places/${data.id}?_method=DELETE`} method="POST">
+              <button type="submit" className="btn btn-danger">
+                Delete
+              </button>
+            </form>
           </div>
         </div>
       </main>
