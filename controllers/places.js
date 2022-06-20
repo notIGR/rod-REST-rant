@@ -2,14 +2,21 @@ const router = require("express").Router();
 const { render } = require("react-dom");
 const places = require("../models/places.js");
 
-// get/new
-router.get("/new", (req, res) => {
-  res.render("places/new");
+//update
+router.get("/:id/edit", (req, res) => {
+  const id = Number(req.params.id);
+  if (isNaN(id)) {
+    res, render("error404");
+  } else if (!places[id]) {
+    res.render("erro404");
+  } else {
+    res.render("places/edit", { place: places[id] });
+  }
 });
 
 //delete
 router.delete("/:id", (req, res) => {
-  let id = Number(req.params.id);
+  const id = Number(req.params.id);
   if (isNaN(id)) {
     res.render("error404");
   } else if (!places[id]) {
@@ -18,6 +25,11 @@ router.delete("/:id", (req, res) => {
     places.splice(id, 1);
     res.redirect("/places");
   }
+});
+
+// get/new
+router.get("/new", (req, res) => {
+  res.render("places/new");
 });
 
 router.post("/", (req, res) => {
