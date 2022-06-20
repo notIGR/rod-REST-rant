@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { render } = require("react-dom");
 const places = require("../models/places.js");
 
-//update
+//edit
 router.get("/:id/edit", (req, res) => {
   const id = Number(req.params.id);
   if (isNaN(id)) {
@@ -11,6 +11,32 @@ router.get("/:id/edit", (req, res) => {
     res.render("erro404");
   } else {
     res.render("places/edit", { place: places[id] });
+  }
+});
+
+//PUT route
+router.put("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    if (!req.body.pic) {
+      // default image 
+      req.body.pic = "http://placekitten.com/400/400";
+    }
+    //default city
+    if (!req.body.city) {
+      req.body.city = "Anytown";
+    }
+    //defauly usa
+    if (!req.body.state) {
+      req.body.state = "USA";
+    }
+    // Save the new data into places[id]
+
+    res.redirect(`/places/${id}`);
   }
 });
 

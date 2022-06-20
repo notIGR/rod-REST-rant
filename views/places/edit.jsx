@@ -36,7 +36,7 @@ const editPage = (data) => {
             />
           </div>
           </div>
-          <input className="btn btn-primary" type="submit" value="Add Place" />
+          <input className="btn btn-primary" type="submit" value="Edit Place" />
         </form>
       </main>
     </Def>
