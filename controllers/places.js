@@ -8,9 +8,9 @@ router.get("/:id/edit", (req, res) => {
   if (isNaN(id)) {
     res, render("error404");
   } else if (!places[id]) {
-    res.render("erro404");
+    res.render("error404");
   } else {
-    res.render("places/edit", { place: places[id] });
+    res.render("places/edit", { place: places[id], id });
   }
 });
 
@@ -23,7 +23,7 @@ router.put("/:id", (req, res) => {
     res.render("error404");
   } else {
     if (!req.body.pic) {
-      // default image 
+      // default image
       req.body.pic = "http://placekitten.com/400/400";
     }
     //default city
@@ -35,7 +35,7 @@ router.put("/:id", (req, res) => {
       req.body.state = "USA";
     }
     // Save the new data into places[id]
-
+    places[id] = req.body;
     res.redirect(`/places/${id}`);
   }
 });
