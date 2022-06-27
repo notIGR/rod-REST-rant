@@ -2,11 +2,12 @@ const React = require("react");
 const Def = require("../default");
 
 const index = (data) => {
-  const placesFormatted = data.places.map((place, index) => {
+  const placesFormatted = data.places.map((place) => {
     return (
       <div className="col-sm-6" key={place.name}>
         <h2>
-          <a href={`/places/${index}`}>{place.name}</a>
+          <a href={`/places/${place.id}`}>
+            {place.name}</a>
         </h2>
         {/* class name the text appers to side of image, clas name text appear above and below image */}
         <p className="text-center">{place.cuisines}</p>
