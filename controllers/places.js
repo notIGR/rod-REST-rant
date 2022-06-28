@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 
-//wont need this require eventually?
-
-//get /places
+//GET/place
 router.get("/", (req, res) => {
   db.Place.find()
     .then((places) => {
@@ -15,7 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
-//put
+//PUT
 router.post("/", (req, res) => {
   db.Place.create(req.body)
     .then(() => {
@@ -27,12 +25,12 @@ router.post("/", (req, res) => {
     });
 });
 
-// get/new
+//GET/new
 router.get("/new", (req, res) => {
-  res.render("places/new"); //fith
+  res.render("places/new");
 });
 
-//showpPage
+//ShowPage
 router.get("/:id", (req, res) => {
   db.Place.findById(req.params.id)
     .then((place) => {
@@ -44,55 +42,27 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//PUT route
+//PUT
 router.put("/:id", (req, res) => {
-  const id = Number(req.params.id);
-  if (isNaN(id)) {
-    res.render("error404");
-  } else if (!places[id]) {
-    res.render("error404");
-  } else {
-    if (!req.body.pic) {
-      // default image
-      req.body.pic = "http://placekitten.com/400/400";
-    }
-    //default city
-    if (!req.body.city) {
-      req.body.city = "Anytown";
-    }
-    //defauly usa
-    if (!req.body.state) {
-      req.body.state = "USA";
-    }
-    // Save the new data into places[id]
-    places[id] = req.body;
-    res.send("PUT .places/:id stub"); //third
-  }
+  res.send("PUT /places/:id stub");
 });
 
 //delete
 router.delete("/:id", (req, res) => {
-  const id = Number(req.params.id);
-  if (isNaN(id)) {
-    res.render("error404");
-  } else if (!places[id]) {
-    res.render("error404");
-  } else {
-    places.splice(id, 1);
-    res.send("DELETE /places/:id stub"); //second
-  }
+  res.send("DELETE /places/:id stub");
 });
 
 //edit
 router.get("/:id/edit", (req, res) => {
-  const id = Number(req.params.id);
-  if (isNaN(id)) {
-    res, render("error404");
-  } else if (!places[id]) {
-    res.render("error404");
-  } else {
-    res.send("GET edit form stub"); //first thing to change from bottom
-  }
+  res.send("GET edit form stub");
+});
+
+router.post("/:id/rant", (req, res) => {
+  res.send("GET /places/:id/rant stub");
+});
+
+router.delete("/:id/rant/:rantId", (req, res) => {
+  res.send("GET /places/:id/rant/:rantId stub");
 });
 
 module.exports = router;
