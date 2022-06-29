@@ -3,6 +3,25 @@ const React = require("react");
 const Def = require("../default");
 
 const showPage = (data) => {
+  const comments = (
+    <h3 className="inactive">
+      No comments yet!
+    </h3>
+  )
+  if (data.place.comments.length) {
+    comments = data.place.comments.map(c => {
+      return (
+        <div className="border">
+          <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+          <h4>{c.content}</h4>
+          <h3>
+            <stong>- {c.author}</stong>
+          </h3>
+          <h4>Rating: {c.stars}</h4>
+        </div>
+      )
+    })
+  }
   return (
     <Def>
       <main>
@@ -46,7 +65,7 @@ const showPage = (data) => {
                 <h4 className="my-0 font-weight-normal">Comments</h4>
               </div>
               <div className="card-body">
-                <p>No comments yet!!!</p>
+                {comments}
               </div>
             </div>
             <a href={`/places/${data.place.id}/edit`}  className="btn btn-warning">
@@ -65,5 +84,3 @@ const showPage = (data) => {
 };
 
 module.exports = showPage;
-
-
