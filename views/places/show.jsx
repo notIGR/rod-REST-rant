@@ -66,20 +66,4 @@ const showPage = (data) => {
 
 module.exports = showPage;
 
-<Def>
-  <main>
-    <div className="row">
-      <div className="col-sm-6">
-        <img src={data.place.pic} alt={data.place.name} />
 
-      </div>
-      <div className="col-sm-6">
-        ...
-        <h2>
-          Description
-        </h2>
-
-        ...
-    </div>
-  </main>
-</Def>
