@@ -9,6 +9,9 @@ const showPage = (data) => {
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
           <h1 className="display-4">{data.place.name}</h1>
           <img src={data.place.pic} alt={data.place.name} />
+          <h3>
+          Located in {data.place.city}, {data.place.state}
+        </h3>
         </div>
 
         <div className="container">
@@ -24,6 +27,12 @@ const showPage = (data) => {
             <div className="card mb-4 box-shadow">
               <div className="card-header">
                 <h4 className="my-0 font-weight-normal">Description</h4>
+                <h3>
+          {data.place.showEstablished()}
+        </h3>
+        <h4>
+          Serving {data.place.cuisines}
+        </h4>
               </div>
               <div className="card-body">
                 <p>
@@ -56,3 +65,21 @@ const showPage = (data) => {
 };
 
 module.exports = showPage;
+
+<Def>
+  <main>
+    <div className="row">
+      <div className="col-sm-6">
+        <img src={data.place.pic} alt={data.place.name} />
+
+      </div>
+      <div className="col-sm-6">
+        ...
+        <h2>
+          Description
+        </h2>
+
+        ...
+    </div>
+  </main>
+</Def>

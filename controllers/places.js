@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const router = require('express').Router();
 const db = require('../models');
 
@@ -20,6 +21,7 @@ router.post('/', (req, res) => {
       res.redirect('/places');
     })
     .catch((err) => {
+      // eslint-disable-next-line no-console
       console.log('err', err);
       res.render('error404');
     });
