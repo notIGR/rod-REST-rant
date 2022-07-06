@@ -12,7 +12,7 @@ const showPage = (data) => {
     comments = data.place.comments.map(c => {
       return (
         <div className="border">
-          <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+          <h2 className="rant">{c.rant ? 'Rant! >:(' : 'Rave! :)'}</h2>
           <h4>{c.content}</h4>
           <h3>
             <stong>- {c.author}</stong>
@@ -68,6 +68,10 @@ const showPage = (data) => {
                 {comments}
               </div>
             </div>
+            <a href={`/places/${data.place.id}/comment`}  className="btn btn-warning">
+              Leave a comment
+            </a>
+            <br></br>
             <a href={`/places/${data.place.id}/edit`}  className="btn btn-warning">
               Edit
             </a>

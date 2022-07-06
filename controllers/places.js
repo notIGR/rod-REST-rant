@@ -94,11 +94,11 @@ router.post('/:id/comment', (req, res) => {
               res.redirect(`/places/${req.params.id}`);
             });
         })
-        .catch((err) => {
+        .catch(() => {
           res.render('error404');
         });
     })
-    .catch((err) => {
+    .catch(() => {
       res.render('error404');
     });
 });
