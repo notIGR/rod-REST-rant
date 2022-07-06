@@ -81,6 +81,6 @@ const showPage = (data) => {
       </main>
     </Def>
   );
-};
+}; 
 
 module.exports = showPage;
