@@ -8,10 +8,31 @@ const showPage = (data) => {
       No comments yet!
     </h3>
   )
+  const rating = (
+    <h3 className="inactive">
+      Not yet Rated
+    </h3>
+  )
   if (data.place.comments.length) {
+    const sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    const averageRating = Math.round(sumRatings / data.place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += 'â­ï¸'
+    }
+    rating = (
+      <h3>
+        {stars} stars
+      </h3>
+    )
     comments = data.place.comments.map(c => {
       return (
         <div className="border">
+                  <form method="POST" action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}>
+          <input type="submit" className="btn btn-danger" value="Delete Comment" />
+        </form>
           <h2 className="rant">{c.rant ? 'Rant! >:(' : 'Rave! :)'}</h2>
           <h4>{c.content}</h4>
           <h3>
@@ -38,6 +59,7 @@ const showPage = (data) => {
             <div className="card mb-4 box-shadow">
               <div className="card-header">
                 <h4 className="my-0 font-weight-normal">Rating</h4>
+                {rating}
               </div>
               <div className="card-body">
                 <p>Not rated</p>
@@ -68,6 +90,7 @@ const showPage = (data) => {
                 {comments}
               </div>
             </div>
+             {/* added button but not linked correctly */}
             <a href={`/places/${data.place.id}/comment`}  className="btn btn-warning">
               Leave a comment
             </a>

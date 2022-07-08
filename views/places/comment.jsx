@@ -1,6 +1,7 @@
 const React = require("react");
 const Def = require("../default");
 
+//cant get any comments to show on anything but h thai m l but i deletee that
 const commentPage = () => {
     return (
         <Def>
